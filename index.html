@@ -16,26 +16,33 @@
         header {
             background-color: #2d89ef;
             color: white;
-            padding: 20px 0;
             text-align: center;
+            padding: 20px;
+        }
+
+        header .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 90%;
+            margin: 0 auto;
         }
 
         header img {
             width: 80px;
             height: auto;
             border-radius: 43px;
-            margin:15px;
-            margin-bottom:-90px;
         }
 
         header h1 {
             margin: 10px 0 5px;
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin: 0 10px;
+            line-height: 1.5;
         }
 
         main {
@@ -51,7 +58,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin: 0 10px;
+            margin: 10px auto;
+            max-width: 90%;
         }
 
         .directors h2, .services h2, .contact h2 {
@@ -59,13 +67,17 @@
             margin-bottom: 15px;
         }
 
-        .directors .director {
-            margin-bottom: 15px;
+        .directors .director, .services ul, .contact p, .contact address {
+            margin-bottom: 10px; /* Added spacing between text */
         }
 
         ul {
             list-style-type: disc;
             padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px; /* Added spacing between list items */
         }
 
         footer {
@@ -76,7 +88,32 @@
             margin-top: 30px;
         }
 
+        .director-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        
+        }
+
+        .director-container img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Media Queries for Responsiveness */
         @media (min-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
             main {
                 display: flex;
                 flex-wrap: wrap;
@@ -86,18 +123,53 @@
             .directors, .services, .contact {
                 flex: 0 0 45%;
                 margin: 10px;
-                max-width: 45%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            header h1 {
+                font-size: 3rem;
             }
 
             header p {
-                margin: 0 auto;
-                max-width: 800px;
+                font-size: 1.5rem;
+            }
+
+            .directors, .services, .contact {
+                flex: 0 0 30%;
+                max-width: 30%;
             }
         }
 
         @media (max-width: 767px) {
+            header .logo-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            header img {
+                width: 60px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
             .directors, .services, .contact {
                 margin: 10px 0;
+            }
+
+            .director-container {
+                flex-direction: column;
+            }
+
+            .director-container img {
+                margin-top: 15px;
+                max-width: 100%;
             }
         }
     </style>
@@ -105,9 +177,9 @@
 <body>
 
 <header>
-    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; width: 100%; padding: 10px;">
-        <img src="./logox.jpg" alt="jFork Technology Services Logo" style="max-height: 100px;">
-        <img src="./jFTS.jpg" alt="jFork Technology Services Logo" style="max-height: 100px;">
+    <div class="logo-container" style="display: flex; flex-direction: row;">
+        <img src="./logox.jpg" alt="jFork Technology Services Logo">
+        <img src="./jFTS.jpg" alt="jFork Technology Services Logo">
     </div>
     <h1>jFork Technology Services</h1>
     <p>We specialize in training and software development in web and big data technologies. Offering project guidance and development services.</p>
@@ -115,56 +187,65 @@
 
 <main>
     <section class="directors">
-        <h2>Meet Our Directors</h2>
-        <div style="display:flex;flex-direction:row;gap:5px">
-        <div>
-        <div class="director">
-            <strong>Dr. S.F. Rodd</strong>, CEO, jForkTS
+        <h2 style="text-align: center;">Meet Our Directors</h2>
+        <div class="director-container" style="display: flex; flex-direction: column; align-items: center; text-align: left;">
+            <img src="./sfrsrm.jpg" style="margin-top: 15px; max-width: 200px; height: auto; border-radius: 8px;" alt="Directors Image">
+            <div style="margin-left: 15px; text-align: left;">
+                <p><strong>Dr. S.F. Rodd</strong>, CEO, jForkTS</p>
+                <p><strong>Dr. S.R. Mangalwede</strong>, CTO, jForkTS</p>
+                <p><strong>S.R. Dhotre</strong>, CFO, jForkTS</p>
+                <p><strong>Auditor:</strong> Mrs. Sonali Joshilkar, CA, Goaves Shahapur Belgaum</p>
+            </div>
         </div>
-        <div class="director">
-            <strong>Dr. S.R. Mangalwede</strong>, CTO, jForkTS
-        </div>
-        <div class="director">
-            <strong>S.R. Dhotre</strong>, CFO, jForkTS
-        </div>
-        <div><strong>Auditor :</strong> Mrs. Sonali Joshilkar, CA, Goaves Shahapur Belgaum</div>
-        </div>
-        <img src="./sfrsrm.jpg" alt="jFork Technology Services Logo" style="margin-top:-50px;height:150px;width:200px">
-    </div>
-    </section>
-
-    <section class="services">
-        <h2>Services Offered</h2>
-        <ul>
-            <li>Training in Full-Stack (<span style="color:orangered;font-size:small">MERN Stack</span>)<br> 
-            <span style="color:crimson;font-size:small">ChatGPT assisted Project design and development</span></li>
-            <li>Training in Full-Stack (<span style="color:blueviolet;font-size:small">ReactJS-SpringBoot-MongoDB</span>)</li>
-            <li>Project Guidance (<span style="color:coral;font-size:small">DBMS projects - MySQL, Postgress-SQL</span>)</li>
-            <li>Project Guidance (<span style="color:darkcyan;font-size:small">MongoDB,ReactJS, NodeJS, AI-ML</span>)</li>
-            <li>Project Guidance in Big-Data and Data Analytics(<span style="color:deepskyblue;font-size:small">Hadoop,Spark</span>)</li>
-            <li>Training on Coding Skills - LeetCode,Hackerank</li>
-            <li>Core and Advanced Java training</li>
-            <li>Devops Tools : git,github,Docker,Selenium,Kubernetes,Jenkins</li>
-        </ul>
-    </section>
-
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:sfroddjforkts@gmail.com">sfroddjforkts@gmail.com</a></p>
-        <p>Phone: <a href="tel:+919480275919">9480275919</a></p>
-        <p>Office Address:</p>
-        <address>
-            jFork Technology Services,<br>
-            CTS 549, A1. Sonar galli, M. Vadagaon,<br>
-            Belgaum - 590005, Karnataka
-            CIN : U80902KA2022PTC164766
-        </address>
-    </section>
-    <section class="contact">
-        <h2>Students @ jforkTS</h2>
-        <img src="./studentsjforkts.jpg" alt="jForkTS Students" style="border-radius:5px; margin-top:0px;height:200px;width:300px">
+        
+        
         
     </section>
+
+    <section class="services" >
+        <h2 style="text-align: center;">Services Offered</h2>
+        <div style="display: flex ; flex-wrap: wrap; flex-direction: col; gap:7px; margin-left: 15px;">
+            <p style="font-weight:600;">Training in Full-Stack (<span style="color:orangered; font-weight:700;">MERN Stack</span>)</p>
+            <p style="font-weight:600;">Training in Full-Stack (<span style="color:blueviolet;">ReactJS-SpringBoot-MongoDB</span>)</p>
+            <p style="font-weight:600;">Project Guidance (<span style="color:coral;">DBMS projects - MySQL, Postgress-SQL</span>)</p>
+            <p style="font-weight:600;">Project Guidance (<span style="color:darkcyan;">MongoDB,ReactJS, NodeJS, AI-ML</span>)</p>
+            <p style="font-weight:600;">Project Guidance in Big-Data and Data Analytics (<span style="color:deepskyblue;">Hadoop, Spark</span>)</p>
+            <p style="font-weight:600;">Training on Coding Skills - LeetCode, HackerRank</p>
+            <p style="font-weight:600;">Core and Advanced Java training</p>
+            <p style="font-weight:600;">DevOps Tools: Git, GitHub, Docker, Selenium, Kubernetes, Jenkins</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact-content" style="max-width: 900px; margin: 0 auto; padding: 25px; border-radius: 12px; ">
+            <h2 style="text-align: center; font-size: 32px; color: #2d89ef; margin-bottom: 30px;">Contact Us</h2>
+            <p style="font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
+                <strong>Email:</strong> 
+                <a href="mailto:sfroddjforkts@gmail.com" style="color: #2d89ef; text-decoration: none; font-weight: 500;">sfroddjforkts@gmail.com</a>
+            </p>
+            <p style="font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
+                <strong>Phone:</strong> 
+                <a href="tel:+919480275919" style="color: #2d89ef; text-decoration: none; font-weight: 500;">9480275919</a>
+            </p>
+            <p style="font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
+                <strong>Office Address:</strong>
+            </p>
+            <address style="font-size: 16px; line-height: 1.6; color: #555;">
+                jFork Technology Services,<br>
+                CTS 549, A1. Sonar galli, M. Vadagaon,<br>
+                Belgaum - 590005, Karnataka<br>
+                CIN: U80902KA2022PTC164766
+            </address>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="students-content" style="max-width: 900px; margin: 0 auto; padding: 25px; border-radius: 12px; ">
+            <h2 style="text-align: center; font-size: 32px; color: #2d89ef; margin-bottom: 30px;">Students @ jForkTS</h2>
+            <img src="./studentsjforkts.jpg" alt="jForkTS Students" style="display: block; margin: 0 auto; width: 100%; max-width: 300px; height: auto; border-radius: 5px;">
+        </div>
+    </section>
+    
 </main>
 
 <footer>
@@ -173,6 +254,3 @@
 
 </body>
 </html>
-
-
-
