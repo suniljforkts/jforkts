@@ -23,7 +23,9 @@
         header img {
             width: 80px;
             height: auto;
-            border-radius: 45px;
+            border-radius: 43px;
+            margin:15px;
+            margin-bottom:-90px;
         }
 
         header h1 {
@@ -103,7 +105,10 @@
 <body>
 
 <header>
-    <img src="./jFTS.jpg" alt="jFork Technology Services Logo">
+    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; width: 100%; padding: 10px;">
+        <img src="./logox.jpg" alt="jFork Technology Services Logo" style="max-height: 100px;">
+        <img src="./jFTS.jpg" alt="jFork Technology Services Logo" style="max-height: 100px;">
+    </div>
     <h1>jFork Technology Services</h1>
     <p>We specialize in training and software development in web and big data technologies. Offering project guidance and development services.</p>
 </header>
@@ -111,6 +116,8 @@
 <main>
     <section class="directors">
         <h2>Meet Our Directors</h2>
+        <div style="display:flex;flex-direction:row;gap:5px">
+        <div>
         <div class="director">
             <strong>Dr. S.F. Rodd</strong>, CEO, jForkTS
         </div>
@@ -120,18 +127,24 @@
         <div class="director">
             <strong>S.R. Dhotre</strong>, CFO, jForkTS
         </div>
+        <div><strong>Auditor :</strong> Mrs. Sonali Joshilkar, CA, Goaves Shahapur Belgaum</div>
+        </div>
+        <img src="./sfrsrm.jpg" alt="jFork Technology Services Logo" style="margin-top:-50px;height:150px;width:200px">
+    </div>
     </section>
 
     <section class="services">
         <h2>Services Offered</h2>
         <ul>
-            <li>Training in Full-Stack (MERN Stack) followed by ChatGPT assisted Capstone Project design and development</li>
+            <li>Training in Full-Stack (MERN Stack)<br> 
+            <span style="color:crimson;font-size:small">ChatGPT assisted Project design and development</span></li>
             <li>Training in Full-Stack (Using SpringBoot)</li>
             <li>Project Guidance (DBMS projects)</li>
             <li>Project Guidance (MongoDB and ReactJS)</li>
-            <li>Project Guidance in Big-Data and Data Analytics</li>
-            <li>Coding Skill Development</li>
+            <li>Project Guidance in Big-Data and Data Analytics(Hadoop,Spark)</li>
+            <li>Training on Coding Skills - LeetCode,Hackerank</li>
             <li>Core and Advanced Java training</li>
+            <li>Devops Tools : git,github,Docker,Selenium,Kubernetes,Jenkins</li>
         </ul>
     </section>
 
@@ -142,8 +155,9 @@
         <p>Office Address:</p>
         <address>
             jFork Technology Services,<br>
-            Sonargalli, Vadagaon,<br>
-            Belgaum - 590005
+            CTS 549, A1. Sonar galli, M. Vadagaon,<br>
+            Belgaum - 590005, Karnataka
+            CIN : U80902KA2022PTC164766
         </address>
     </section>
 </main>
